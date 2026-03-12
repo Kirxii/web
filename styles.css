@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anaheim:wght@400..800&display=swap");
-
-@keyframes slideInUp {
-	from {
-		transform: translate(0, 100%);
-		opacity: 0;
-	}
-
-	to {
-		transform: translate(0, 0);
-		opacity: 1;
-	}
-}
+@import url("https://fonts.googleapis.com/css2?family=Dongle&display=swap");
 
 body {
 	display: flex;
@@ -19,6 +8,7 @@ body {
 	align-items: center;
 	background-color: #080808;
 	color: #f8f8f8;
+	font-family: "Dongle";
 }
 
 .introduction {
@@ -65,9 +55,31 @@ body {
 	}
 }
 
+p,
+h2 {
+	transition: all 0.25s ease-out;
+
+	&:hover {
+		border-left: 1px solid #2cff05;
+		transform: translateX(-16px);
+	}
+}
+
 .content {
 	width: 80hw;
 	flex-direction: row;
+
+	&>.table-of-content {
+		width: 20hw;
+	}
+
+	&>.info {
+		width: 60hw;
+	}
+
+	&>.table-of-content {
+		margin-top: 1.5em;
+	}
 }
 
 h1 {
