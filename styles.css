@@ -9,6 +9,8 @@ body {
 	background-color: #080808;
 	color: #f8f8f8;
 	font-family: "Dongle";
+	font-size: 28px;
+	line-height: 0.85em;
 }
 
 .introduction {
@@ -49,7 +51,7 @@ body {
 
 	& p {
 		width: 75%;
-		font-size: 1.5em;
+		font-size: 0.85em;
 		text-align: center;
 		font-family: "Anaheim";
 	}
@@ -57,33 +59,49 @@ body {
 
 p,
 h2 {
-	transition: all 0.25s ease-out;
+	border-left: 0px solid transparent;
+	transition: all 0.1s ease-out;
 
 	&:hover {
 		border-left: 1px solid #2cff05;
-		transform: translateX(-16px);
+		transform: translateX(16px);
 	}
 }
 
 .content {
-	width: 80hw;
+	width: 80vw;
+	display: flex;
 	flex-direction: row;
+	gap: 0;
 
 	&>.table-of-content {
-		width: 20hw;
+		width: 20vw;
 	}
 
 	&>.info {
-		width: 60hw;
+		width: 60vw;
 	}
 
 	&>.table-of-content {
 		margin-top: 1.5em;
+
+		&>ol {
+			position: sticky;
+			top: 50px;
+		}
+	}
+
+	& p {
+		font-size: 1em;
+	}
+
+	&>.info * {
+		padding-left: 12px;
 	}
 }
 
 h1 {
-	font-size: 8em;
+	font-size: 4.5em;
 	line-height: 0;
 	user-select: none;
 	font-family: "Anaheim";
