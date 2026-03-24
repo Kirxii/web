@@ -29,6 +29,7 @@ body {
 		border-radius: 24px;
 		object-fit: cover;
 		z-index: -1;
+		transition: filter 0.25s ease-out;
 	}
 
 	&>.text-overlay {
@@ -49,22 +50,16 @@ body {
 		box-shadow: 0 0 4px 4px #2cff05;
 	}
 
+	&>img:has(~ .text-overlay:hover) {
+		filter: blur(6px);
+		-webkit-filter: blur(6px);
+	}
+
 	& p {
 		width: 75%;
 		font-size: 0.85em;
 		text-align: center;
 		font-family: "Anaheim";
-	}
-}
-
-p,
-h2 {
-	border-left: 0px solid transparent;
-	transition: all 0.1s ease-out;
-
-	&:hover {
-		border-left: 1px solid #2cff05;
-		transform: translateX(16px);
 	}
 }
 
@@ -76,6 +71,16 @@ h2 {
 
 	&>.table-of-content {
 		width: 20vw;
+
+		& li {
+			color: #2cff05;
+			text-decoration: underline #2cff05 solid 1px;
+		}
+
+		& a,
+		& a:link {
+			color: #2cff05;
+		}
 	}
 
 	&>.info {
@@ -95,8 +100,55 @@ h2 {
 		font-size: 1em;
 	}
 
-	&>.info * {
+	&>.info> :not(.image-container) {
 		padding-left: 12px;
+	}
+
+	&>.info> :is(p, h2),
+	&>.info li {
+		border-left: 0px solid transparent;
+		transition: all 0.1s ease-out;
+
+		&:hover {
+			border-left: 1px solid #2cff05;
+			transform: translateX(16px);
+		}
+	}
+
+	& li {
+		list-style-position: inside;
+	}
+}
+
+.image-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&>p {
+		transition: transform 0.1s ease-out;
+	}
+
+	&>img {
+		border-radius: 20px;
+		height: 414px;
+		transition:
+			transform 0.1s ease-out,
+			box-shadow 0.2s ease-out;
+	}
+
+	&>img:hover {
+		transform: scale(1.03);
+		box-shadow: 0 0 4px 4px #2cff05;
+	}
+
+	&>img:hover~p {
+		transform: translateY(8px);
+	}
+
+	&>p {
+		margin-top: 12px;
 	}
 }
 
