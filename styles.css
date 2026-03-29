@@ -13,6 +13,12 @@ body {
 	line-height: 0.85em;
 }
 
+body:has(.form-box) {
+	flex-direction: row;
+	gap: 20px;
+	height: 100vh;
+}
+
 .introduction {
 	color: white;
 	width: 80vw;
@@ -92,7 +98,7 @@ body {
 
 		&>ol {
 			position: sticky;
-			top: 50px;
+			top: 100px;
 		}
 	}
 
@@ -159,4 +165,53 @@ h1 {
 	font-family: "Anaheim";
 	font-weight: 800;
 	text-transform: uppercase;
+}
+
+.form-box {
+	background: #1f1f1f;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+	width: 320px;
+}
+
+h2 {
+	text-align: center;
+	color: #2cff05;
+}
+
+.input-group {
+	margin-bottom: 15px;
+}
+
+.input-group label {
+	display: block;
+	margin-bottom: 5px;
+	color: white;
+	font-weight: bold;
+}
+
+.input-group input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+button {
+	width: 100%;
+	padding: 12px;
+	background-color: #2cff05;
+	color: #1f1f1f;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	transition: background-color 0.1s ease-out;
+}
+
+button:hover {
+	background-color: lightgreen;
 }
